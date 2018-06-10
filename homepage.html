@@ -1,0 +1,235 @@
+<html xmlns:float="http://www.w3.org/1999/xhtml" xmlns:font-size="http://www.w3.org/1999/xhtml">
+<head>
+    <title>哟哟哟</title>
+    <style>
+body{margin:0px;}
+ul{list-style:none; border:0; padding:0px; margin:0px;}
+li{list-style:none; float:left; border:0; padding:0px; margin:0px;}
+ima{border:0px;  padding:0px; margin:0px;}
+
+    </style>
+    <style>
+.box{
+    width:50%; margin-top:10%; margin:auto; padding:28px;
+    height:350px; border:1px #000 solid;
+    display:none;            /* 默认对话框隐藏 */
+}
+.box.show{display:block;}
+.box .x{ font-size:18px; text-align:right; display:block;}
+.box input{width:80%; font-size:18px; margin-top:18px;}
+
+
+    </style>
+</head>
+<body style="background-color:black;">
+
+<div class="container padding-big-top padding-big-bottom">
+
+
+            <p>
+                <img src="http://pic.baike.soso.com/p/20131107/20131107160850-1657734949.jpg"
+                     width="30"
+                     height="30"style="float:left;"/>
+    <div class="input-group padding-little-top">
+    <input type="text" class="input" name="keywords" size="20" placeholder="关键词" />
+    <span class="addbtn">
+                    <button type="button" class="button">
+                        搜索!</button></span>
+</div>
+            </p>
+</div>
+
+<div style="color:white;font-size:25px;">
+    <a href="http://news.163.com/domestic"> 学校要闻 </a>
+    <a href="http://news.163.com/shehui"> 综合新闻 </a>
+    <a href="http://news.163.com/world"> 媒体汽院 </a>
+    <a href="http://war.163.com/">汽院故事</a>
+    <a href="http://war.163.com/">个人中心</a>
+    <input type="button" onClick="msgbox(1)" size="5" value="个人中心">
+
+    <script>
+        function msgbox(n){
+            document.getElementById('inputbox').style.display=n?'block':'none';     /* 点击按钮打开/关闭 对话框 */
+        }
+
+
+    </script>
+    <div id='inputbox' class="box" style="font-size:15px;background-color:green;">
+        <a class='x' href='' ; onclick="msgbox(0); return false;">关闭</a>
+        <p>头像：<image src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1772548658,1380138928&fm=58&bpow=362&bpoh=355"  width="80" height="80"/></p>
+        <p>QQ:666666</p>
+        <p>ID:1234567</p>
+        <input type="submit" value="确定" onclick="msgbox(0); return true;">
+    </div>
+
+</div>
+
+<center>
+    <div id="div1" style="overflow:hidden; cursor:hand; margin-top:10px;" onmouseover="stop()"
+         onmouseout="ss()">
+        <ul id="img" style="clear:both;"><!--放图片的容器，此容器在div1里滚动-->
+            <li><a href="http://news.163.com/18/0608/09/DJP4KS0M0001875P.html"> <img id="img0"
+                                                                                     src="http://www.huat.edu.cn/_mediafile/huat_new/2018/04/26/2wm9ad4y3a.jpg"
+                                                                                     width="250"
+                                                                                     height="200"
+                                                                                     style="display:block;"/></a>
+            </li>
+            <li><a href="http://news.163.com/18/0608/16/DJPQULMH0001899O.html"><img id="img1"
+                                                                                    src="http://www.huat.edu.cn/_mediafile/huat_new/2018/04/24/2197xry7gf.jpg"
+                                                                                    width="250"
+                                                                                    height="200"
+                                                                                    style="display:block;"/></a>
+            </li>
+            <li><a href="http://news.163.com/18/0608/18/DJQ2JEB90001875O.html"><img id="img2"
+                                                                                    src="http://www.huat.edu.cn/_mediafile/huat_new/2018/04/24/207psjha3b.jpg"
+                                                                                    width="250"
+                                                                                    height="200"
+                                                                                    style="display:block;"/></a>
+            </li>
+            <li><a href="http://news.163.com/18/0607/14/DJN1TA9R0001875O.html"><img id="img3"
+                                                                                    src="http://www.huat.edu.cn/_mediafile/huat_new/2018/04/04/27id734kb6.jpg"
+                                                                                    width="250"
+                                                                                    height="200"
+                                                                                    style="display:block;"/></a>
+            </li>
+        </ul>
+    </div>
+</center>
+<script language="javascript">
+var w,h,id,speed,Html
+w=400;//-------滚动容器的宽度--------//
+h=200;//-------滚动容器的高度--------//
+id="div1";//-------滚动容器的id--------//
+direction="left";//-------滚动方向有四个值left，right，up，down，自己试试--------//
+speed="1000";//-------滚动速度100相当于1秒，越小越快--------//
+imgDiv="img";//-------放图片的容器id--------//
+HtmlL=document.getElementById(imgDiv).innerHTML;
+HtmlT=document.getElementById(id).innerHTML;
+switch (direction)
+{
+case "left":
+     document.getElementById(imgDiv).innerHTML=HtmlL+HtmlL;
+  break;
+case "right":
+     document.getElementById(imgDiv).innerHTML=HtmlL+HtmlL;
+  break;
+case "up":
+     document.getElementById(id).innerHTML=HtmlT+HtmlT;
+  break;
+case "down":
+     document.getElementById(id).innerHTML=HtmlT+HtmlT;
+  break;
+}
+function ss(){
+document.getElementById(id).style.width=w;
+document.getElementById(id).style.height=h;
+document.getElementById(imgDiv).style.width=w*2;
+document.getElementById(imgDiv).style.height=h;
+var ele
+ele=document.getElementById("div1");
+switch (direction)
+{
+case "left":
+ele.scrollLeft=ele.scrollLeft+5;
+if (ele.scrollLeft>=w)
+{
+ele.scrollLeft=0;
+}
+break;
+case "right":
+ele.scrollLeft=ele.scrollLeft-5;
+if (ele.scrollLeft<=0)
+{
+ele.scrollLeft=w;
+}
+break;
+case "up":
+ele.scrollTop=ele.scrollTop+5;
+if (ele.scrollTop>=h)
+{
+ele.scrollTop=0;
+}
+break;
+case "down":
+ele.scrollTop=ele.scrollTop-5;
+if (ele.scrollTop<=0)
+{
+ele.scrollTop=h;
+}
+break;
+}
+t=setTimeout("ss()",speed);
+}
+function stop(){
+document.getElementById("div1").scrollLeft=document.getElementById("div1").scrollLeft;
+document.getElementById("div1").scrollTop=document.getElementById("div1").scrollTop;
+     clearTimeout(t);
+}
+setTimeout("ss()",1000);
+
+
+</script>
+<div id="div2" style=" margin-top:10px;">
+    <ul>
+        <!--<img src="http://cms-bucket.nosdn.127.net/2018/06/05/ea55b48cd307422292ecd2393aacb091.png?imageView&thumbnail=140y88&quality=85">-->
+
+        <li>
+            <a href="http://htmlpreview.github.com/?https://github.com/Maodq/quande.github.com/blob/master/1.html"><img
+                    src=" https://raw.githubusercontent.com/Maodq/quande.github.com/master/QQ%E5%9B%BE%E7%89%8720180609232952.jpg"
+                    width="100"
+                    height="80"
+                    style="float:left;margin-right:10px;display:block;"/><font color="white"size=5px>软件152班火了，全班考上清华</font><br/></a>
+        </li>
+        <li>
+            <a href="http://www.huat.edu.cn/info/1087/9026.htm"><img id="img4"
+                                                                                src="http://www.huat.edu.cn/_mediafile/huat_new/2018/06/06/52xozu4537.jpg"
+                                                                                width="100"
+                                                                                height="80"
+                                                                                style="float:left;margin-right:10px;display:block;"/><font color="white"size=5px>学校召开车辆工程专业认证意见反馈会</font><br/></a>
+        </li>
+
+        <li>
+            <a href="http://www.huat.edu.cn/info/1087/9025.htm"><img
+                    src="http://www.huat.edu.cn/_mediafile/huat_new/2018/06/06/78xkl8u4rb.jpg"
+                    width="100"
+                    height="80"
+                    style="float:left;margin-right:10px;margin-top:10px;display:block;"/><font color="white"size=5px>上海校友会召开理事会换届大会暨校友创新创业交流会</font><br/></a>
+        </li>
+        <li>
+            <a href="http://hb.news.163.com/18/0609/10/DJRP034704088CPP.html"><img
+                    src="http://cms-bucket.nosdn.127.net/2018/06/09/851e1769e54749fe8f79cefcc6cc4958.png?imageView&thumbnail=140y88&quality=85"
+                    width="100"
+                    height="80"
+                    style="float:left;margin-right:10px;margin-top:10px;display:block;"/><font color="white"size=5px>湖北这2所高校再登世界500强大学 名次爆升</font><br/></a>
+        </li>
+        <li>
+            <a href="http://war.163.com/photoview/4T8E0001/2294121.html#p=DJRTP0SB4T8E0001NOS"><img
+                    src="http://cms-bucket.nosdn.127.net/2018/06/09/6eff1b7826e84a6da34a47563290c042.jpeg?imageView&thumbnail=600y300"
+                    width="100"
+                    height="80"
+                    style="float:left;margin-right:10px;margin-top:10px;display:block;"/><font color="white"size=5px>喜报：国产挂飞训练弹研制成功</font><br/></a>
+        </li>
+        <li>
+            <a href="http://g.h3ue2s.com/s/1/116/87764.html?uid=143025"><img
+                    src="http://yt-adp.nosdn.127.net/channel19/600200_alog_20180607.jpg"
+                    width="100"
+                    height="80"
+                    style="float:left;margin-right:10px;margin-top:10px;display:block;"/><font color="white"size=5px>开局一条鲲，进化异化，全靠个人</font><br/></a>
+        </li>
+    </ul>
+</div>
+
+<div class="container-layout">
+    <div class="border-top padding-top">
+        <div class="text-center">
+            <ul class="nav nav-inline">
+                <li class="active"><a href="http://news.163.com/">     网站首页 </a><a href="http://www.huat.edu.cn/"> 校园简介 </a> <a href="#"> 产品中心 </a><a href="#">   留言反馈 </a><a href="#"> 联系方式 </a></li>
+            </ul>
+        </div>
+        <div class="text-center height-big" style="color=white;">
+            <font color="white">  版权所有 © HUAT.NEWS.com All Rights Reserved，图ICP备：201500778</font></div>
+    </div>
+</div>
+
+</body>
+</html>
